@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.v-application{
+    @apply bg-transparent !important
+}
+
+.v-progress-linear{
+    @apply h-28 rounded-md top-1 !important
+}
+.v-data-table__progress tr,
+.v-data-table__progress th{
+    @apply h-28 !important
+}
+
+.btn-login{
+    @apply py-3 px-12 h-12 text-base font-medium text-center text-white bg-gradient-to-br from-pink-500 to-pink-900 hover:scale-[1.02] shadow-md shadow-gray-300 transition-transform rounded-lg sm:w-auto !important
+}
+
+.btn-login .v-btn__content{
+    @apply text-white
+}
+
+/* navbar style */
+.side-nav{
+    @apply flex items-center py-2.5 px-4 text-base font-normal text-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-200 my-2
+}
+
+.side-nav span{
+    @apply text-gray-600
+}
+
+.side-nav.router-link-exact-active{
+    @apply flex items-center py-2.5 px-4 text-base font-normal text-gray-800 rounded-lg  bg-white shadow-lg shadow-gray-200 transition-all duration-200
+}
+
+.side-nav.router-link-exact-active span{
+    @apply text-gray-800
+}
+
+/* auto complete */
+.v-autocomplete__content.v-menu__content{
+    @apply rounded-lg !important
+}
+
+.link-to-pemohon{
+    @apply text-blue-400 !important
+}
+
+.elipsis-text{
+    width : 250px !important;
+    @apply text-ellipsis overflow-hidden whitespace-nowrap !important
+}
+
+/* table */
+.ppid-table-data{
+    @apply p-4 outline-gray-200 shadow-lg rounded-3xl !important
+}
+
+.ppid-table-data.no-shadow{
+    @apply shadow-none !important
+}
+
+.ppid-table-data thead tr th{
+    @apply h-auto py-5 !important
+}
+
+.ppid-table-data thead tr th span{
+    @apply text-xs font-medium text-left text-gray-500 uppercase p-0 !important
+}
+.ppid-table-data tbody tr{
+    @apply h-20
+}
+.ppid-table-data tbody tr th span{
+    @apply text-gray-900 !important
+}
+
+/* button */
+.btn-blue span,
+.btn-green span,
+.btn-gray span,
+.btn-red span{
+    @apply text-white !important 
+}
+
+.btn-blue{
+    @apply inline-flex items-center my-1 py-2 px-8 text-sm font-medium text-center text-white bg-gradient-to-br from-blue-400 to-blue-700 rounded-lg shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform !important
+}
+
+.btn-green{
+    @apply inline-flex items-center my-1 py-2 px-8 text-sm font-medium text-center text-white bg-gradient-to-br from-green-400 to-green-700 rounded-lg shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform !important
+}
+
+.btn-gray{
+    @apply inline-flex items-center my-1 py-2 px-8 text-sm font-medium text-center text-white bg-gradient-to-br from-gray-400 to-gray-700 rounded-lg shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform !important
+}
+
+.btn-red{
+    @apply inline-flex items-center my-1 py-2 px-8 text-sm font-medium text-center text-white bg-gradient-to-br from-red-400 to-red-700 rounded-lg shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform !important
+}

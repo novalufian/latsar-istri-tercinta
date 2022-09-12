@@ -1,0 +1,78 @@
+<template >
+    <div class="w-10/12 m-auto">
+        <div class="flex flex-row">
+            <div class="w-2/6 p-5">
+                <div class="relative w-full shadow-lg rounded-lg h-40 bg-gray-900">
+                    <h1 class="text-2xl font-bold p-6 tracking-tighter leading-tighter text-lime-400">Permohonan <br> Informasi</h1>
+                    <p class="text-white text-3xl font-thin absolute bottom-5 right-10 flex flex-row items-end">
+                        <span class="text-green-400 flex flex-row text-sm mx-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ">
+                            <path fill-rule="evenodd" d="M12.577 4.878a.75.75 0 01.919-.53l4.78 1.281a.75.75 0 01.531.919l-1.281 4.78a.75.75 0 01-1.449-.387l.81-3.022a19.407 19.407 0 00-5.594 5.203.75.75 0 01-1.139.093L7 10.06l-4.72 4.72a.75.75 0 01-1.06-1.061l5.25-5.25a.75.75 0 011.06 0l3.074 3.073a20.923 20.923 0 015.545-4.931l-3.042-.815a.75.75 0 01-.53-.919z" clip-rule="evenodd" />
+                            </svg>
+                            + 87
+                        </span>
+                        1280
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-2/6 p-5">
+                <div class="relative w-full shadow-lg rounded-lg h-40 bg-gray-900">
+                    <h1 class="text-2xl font-bold p-6 tracking-tighter leading-tighter text-pink-500">Keberatan</h1>
+                    <p class="text-white text-3xl font-thin absolute bottom-5 right-10 flex flex-row items-end">
+                        <span class="text-green-400 flex flex-row text-sm mx-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ">
+                            <path fill-rule="evenodd" d="M12.577 4.878a.75.75 0 01.919-.53l4.78 1.281a.75.75 0 01.531.919l-1.281 4.78a.75.75 0 01-1.449-.387l.81-3.022a19.407 19.407 0 00-5.594 5.203.75.75 0 01-1.139.093L7 10.06l-4.72 4.72a.75.75 0 01-1.06-1.061l5.25-5.25a.75.75 0 011.06 0l3.074 3.073a20.923 20.923 0 015.545-4.931l-3.042-.815a.75.75 0 01-.53-.919z" clip-rule="evenodd" />
+                            </svg>
+                            + 20
+                        </span>
+                        240
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="w-2/6 p-5">
+                <div class="relative w-full shadow-lg rounded-lg h-40 bg-gray-900">
+                    <h1 class="text-2xl font-bold p-6 tracking-tighter leading-tighter text-sky-400">Data <br> Pemohon</h1>
+                    <p class="text-white text-3xl font-thin absolute bottom-5 right-10">112</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-row">
+            <div class="w-4/6 p-5">
+                <div class="relative w-full shadow-lg rounded-lg h-72 bg-gray-100">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis iste recusandae debitis vel porro dolorum sit perferendis? Assumenda esse minus accusantium, illo amet modi sequi hic quae, minima veritatis expedita.
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</template>
+<script>
+import axios from 'axios'
+export default {
+
+    components : {
+    },
+
+    methods:{
+        getSuratMasukBelumTerpenuhi (){
+            axios.get("http://localhost/suratMasuk?status=Belum Terpenuhi")
+            .then((res)=>{
+                console.log(res.data)
+            })
+        }
+    },
+
+    created(){
+        this.getSuratMasukBelumTerpenuhi()
+    }
+    
+}
+</script>
+<style lang="">
+    
+</style>
