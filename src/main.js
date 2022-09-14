@@ -7,6 +7,7 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 Vue.prototype.$baseUrl = "https://untitled-ua515pfg2ggh.runkit.sh"
+// Vue.prototype.$baseUrl = "http://localhost:3000"
 
 new Vue({
   router,

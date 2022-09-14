@@ -68,7 +68,8 @@
                         
                         <div class="flex flex-row justify-between">
                             <v-btn class="mr-4 h-12 w-6/12" :class="(isUpdateActive) ? 'btn-green' : 'btn-blue'" type="submit" :disabled="invalid">{{submitText}}</v-btn>
-                        <v-btn @click="clear" class="h-12 btn-gray w-5/12">clear</v-btn>
+                        <!-- <v-btn @click="clear" class="h-12 btn-gray w-5/12">clear</v-btn> -->
+                        <v-btn @click="generateReport" class="h-12 btn-gray w-auto">cetak</v-btn>
                         </div>
                         
                     </div>
@@ -77,6 +78,14 @@
                 </form>
             </validation-observer>
         </v-card>
+
+        <vue-html2pdf :show-layout="false" :float-layout="true" :enable-download="false" :preview-modal="true" :paginate-elements-by-height="1400" filename="hee hee" :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="800px"  ref="html2Pdf">
+            <section slot="pdf-content">
+                <!-- PDF Content Here -->
+                <PDFFormulir :data="dataSuratMasuk"></PDFFormulir>
+                
+            </section>
+        </vue-html2pdf>
     </div>
 </template>
 
@@ -85,6 +94,9 @@
     import { uuid } from 'vue-uuid'
     import { required, digits, email, max, regex } from 'vee-validate/dist/rules'
     import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
+    import VueHtml2pdf from 'vue-html2pdf'
+    import PDFFormulir from './PDFFormulir.vue'
+
 
     setInteractionMode('eager')
 
@@ -117,6 +129,8 @@
         components: {
             ValidationProvider,
             ValidationObserver,
+            VueHtml2pdf,
+            PDFFormulir
         },
 
         data() {
@@ -157,6 +171,10 @@
         },
 
         methods: {
+            generateReport () {
+                this.$refs.html2Pdf.generatePdf()
+            },
+
             submit () {
                 this.$refs.observer.validate()
                 if(this.isUpdateActive){
@@ -265,3 +283,31 @@
         }
     }
 </script>
+
+<style>
+section.pdf-preview {
+    width: 100% !important;
+    top: 0 !important;
+    height: 100% !important;
+    background: #21212190;
+}
+
+.vue-html2pdf .pdf-preview iframe {
+    width: 65% !important;
+    margin: 10vh auto;
+    height: 80vh;
+    border-radius: 10px;
+}
+
+.vue-html2pdf .pdf-preview button {
+    width: 100% !important;
+    height: 100vh !important;
+    background: #21212110 !important;
+    z-index: -1;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+</style>

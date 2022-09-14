@@ -16,7 +16,7 @@ export default {
     //
   }),
   mounted(){
-    console.log(this.$baseUrl)
+    console.log(this.$baseUrl, 12313)
   }
 };
 </script>

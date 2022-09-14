@@ -30,9 +30,9 @@ export default {
             navigation : [
                 {path : '/', name : 'Dashboard'},
                 {path : '/permohonan-informasi', name : 'Permohonan Informasi'},
-                {path : '/Pengajuan-keberatan', name : 'Pengajuan Keberatan'},
+                // {path : '/Pengajuan-keberatan', name : 'Pengajuan Keberatan'},
                 {path : '/data-pemohon', name : 'Data Pemohon'},
-                {path : '/data-atasan', name : 'Data Atasan'},
+                // {path : '/data-atasan', name : 'Data Atasan'},
 
             ]
         }
